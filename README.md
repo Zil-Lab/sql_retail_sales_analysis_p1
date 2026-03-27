@@ -147,16 +147,16 @@ ORDER BY 1
 7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**:
 ```sql
 SELECT * FROM 
-    (
-        SELECT 
-            YEAR(sale_date),
-            MONTH(sale_date),
-            AVG(total_sale) as avg_sale, 
-            RANK() OVER(PARTITION BY YEAR(sale_date) ORDER BY AVG(total_sale) DESC) as sales_rank 
-        FROM retail_sales 
-        GROUP BY 1, 2 
-    ) as t1 
-    WHERE sales_rank = 1;
+(
+	SELECT 
+		YEAR(sale_date),
+		MONTH(sale_date),
+		AVG(total_sale) as avg_sale, 
+		RANK() OVER(PARTITION BY YEAR(sale_date) ORDER BY AVG(total_sale) DESC) as sales_rank 
+	FROM retail_sales 
+	GROUP BY 1, 2 
+) as t1 
+WHERE sales_rank = 1;
 ```
 
 8. **Write a SQL query to find the top 5 customers based on the highest total sales **:
@@ -214,4 +214,10 @@ GROUP BY shift
 
 ## Conclusion
 
-This project serves as a comprehensive introduction to SQL for data analysts, covering database setup, data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
+This project covers database setup, data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
+
+## Author - Zilpah Mbuvi
+
+This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
+
+- **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/zilpahmbuvi/)]
